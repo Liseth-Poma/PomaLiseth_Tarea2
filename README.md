@@ -1,6 +1,7 @@
 # Chat en Tiempo Real con Sockets
 
 **Nombre completo:** Liseth Carolina Poma Lagos
+
 **Fecha de entrega:** 30 de mayo de 2025
 
 ---
@@ -77,6 +78,7 @@ Se mejoró el diseño visual de la aplicación utilizando CSS y herramientas com
 ![Interfaz Registro](https://i.imgur.com/gn1VrET.png)
 
 **Diseño responsivo:**
+
 ![Responsividad](https://i.imgur.com/eIRwenG.png)
 
 ---
@@ -117,7 +119,7 @@ Antes de acceder al chat, se solicita un nombre de usuario, lo cual permite una 
 
 Durante el desarrollo de este proyecto se obtuvo un aprendizaje significativo sobre la creación de aplicaciones en tiempo real mediante sockets. Comprender su funcionamiento y aplicación en una arquitectura web permitió establecer una comunicación eficiente entre los usuarios.
 
-Además, se profundizó en el diseño de interfaces amigables, responsivas e intuitivas, inspiradas en plataformas populares de mensajería. También se exploraron funcionalidades adicionales como notificaciones push, las cuales enriquecen la experiencia del usuario.
+Además, se profundizó en el diseño de interfaces amigables, responsivas e intuitivas, inspiradas en plataformas populares de mensajería. También se exploraron funcionalidades adicionales como notificaciones, las cuales enriquecen la experiencia del usuario.
 
 Uno de los mayores retos fue lograr un diseño atractivo y funcional. Sin embargo, la integración de herramientas modernas permitió superar estos desafíos y obtener un resultado satisfactorio.
 
