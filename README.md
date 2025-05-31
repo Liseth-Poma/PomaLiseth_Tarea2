@@ -7,97 +7,93 @@
 
 ## Introducción
 
-Este proyecto tiene como objetivo implementar un **chat en tiempo real utilizando sockets**, permitiendo la comunicación instantánea entre múltiples usuarios desde diferentes dispositivos. Se parte de un repositorio base proporcionado por el docente, que sirve como referencia para entender la estructura general del sistema y su funcionamiento básico.
+Este proyecto consiste en el desarrollo de una aplicación de chat en tiempo real utilizando tecnologías web modernas. El objetivo principal es crear una plataforma sencilla y eficiente que permita a los usuarios comunicarse de manera instantánea.
 
-El uso de sockets es fundamental en aplicaciones en tiempo real, como chats, videojuegos multijugador y sistemas de colaboración en línea, ya que permiten una comunicación eficiente, bidireccional y basada en eventos entre el servidor y los clientes conectados.
+El uso de sockets es fundamental en este tipo de aplicaciones, ya que permiten establecer una conexión bidireccional entre cliente y servidor. A diferencia de las solicitudes HTTP tradicionales, los sockets mantienen una conexión persistente, ideal para comunicaciones en tiempo real. Esta conexión continua posibilita el envío y la recepción de mensajes sin necesidad de recargar la página, mejorando así la experiencia del usuario y facilitando una interacción fluida.
 
 ---
-## **Actividad 1: Clonación del Repositorio y Estructura Inicial**
-Los estudiantes deben clonar el repositorio proporcionado:
+
+## Actividad 1: Clonación del Repositorio y Estructura Inicial
+
+Para comenzar, se debe clonar el repositorio proporcionado por el docente:
+
+```bash
 git clone https://github.com/paulosk8/webChat.git
-Explorar las ramas del repositorio:
-Rama principal: Contiene el código inicial del proyecto.
-Rama implementacion-chat: Contiene la versión final del proyecto como referencia.
+```
 
-
-## Repositorio Base
-
-Repositorio original proporcionado por el docente:  
+Repositorio original:
 🔗 [https://github.com/paulosk8/webChat/tree/main](https://github.com/paulosk8/webChat/tree/main)
 
-**Ramas del repositorio:**
+**Ramas disponibles:**
 
-- `main`: Contiene el código inicial.
-- `implementacion-chat`: Versión final del proyecto como referencia.
+* `main`: Contiene el código inicial del proyecto.
+* `implementacion-chat`: Incluye la versión final como referencia.
+
+A continuación, se crea una nueva rama para el desarrollo individual:
 
 ```bash
-git clone https://github.com/paulosk8/webChat.git
-
-![Clonar Repositorio](https://imgur.com/Eoj5vhI)
-
-Crear una nueva rama para su propio desarrollo:
 git checkout -b mi-implementacion
+```
 
-Despues de eso, ya se podrá abrir el proyecto con el editor de código e instalar todas sus dependencias con el comando **npm install**
-![Instalar dependencias](https://imgur.com/eqyZS4w)
+### Capturas del proceso:
 
-Y finalmente ejecutar el proyecto con el comando **npm start** que se estára ejecutando en el navegador web localmente
-![Inicializar Proyecto](https://imgur.com/mhHvyeW)
+![Clonar Repositorio](https://i.imgur.com/Eoj5vhI.png)
+![Nueva Rama](https://i.imgur.com/b9PkuJN.png)
 
-## **Actividad 2: Mejora del Diseño del Chat**
-Los estudiantes deben mejorar el diseño del chat utilizando herramientas como CSS, frameworks (ej. Bootstrap, Tailwind CSS) o librerías de componentes (ej. Material-UI).
+Luego, se abre el proyecto en un editor de código y se instalan las dependencias:
 
-Mejorar la interfaz visual (colores, tipografía, espaciado).
-Agregar animaciones para mensajes entrantes/salientes.
-Se realizó una mejora tanto en el chat como en el registro de usuario, la interaz simula un chat de whatsAap
-### Interfaz del chat mejorada
-![Interfaz Visual](https://imgur.com/gM7g8hF)
-
-### Interfaz del registro de usuario mejorada
-![Interfaz Visual del Registro de Usuario](https://imgur.com/gn1VrET)
-
-Implementar un diseño responsivo para dispositivos móviles.
-
-### Diseño responsivo
-![Resposividad para pantallas móviles](https://imgur.com/eIRwenG)
-
-## **Actividad 3: Características Adicionales (Opcional)**
-Los estudiantes pueden agregar características adicionales para personalizar su chat. Algunas ideas incluyen:
-Notificaciones: Mostrar notificaciones cuando llega un nuevo mensaje.
-
-Se implementan notificaciones para que le lleguen al usuario a través de chrome, para ello primero se verifica si el navegador admite notificaciones, en caso de que sea posible, se podran integrar las notificaciones y cada vez que los usuarios envien un mensaje al chat este será notificado mediante el navegador.
-
-En este código, primero verificamos si el navegador soporta la API de Notificaciones y solicitamos permiso al usuario para mostrar notificaciones. Luego, dentro del evento message, comprobamos si el permiso ha sido otorgado y, en caso afirmativo, mostramos una notificación con el nombre del usuario y el mensaje recibido
 ```bash
+npm install
+```
+
+![Instalar dependencias](https://i.imgur.com/eqyZS4w.png)
+
+Finalmente, se ejecuta el proyecto:
+
+```bash
+npm start
+```
+
+![Inicializar Proyecto](https://i.imgur.com/mhHvyeW.png)
+
+---
+
+## Actividad 2: Mejora del Diseño del Chat
+
+Se mejoró el diseño visual de la aplicación utilizando CSS y herramientas como Bootstrap. Las mejoras incluyeron:
+
+* Interfaz visual estilizada (colores, tipografía, espaciado).
+* Animaciones para mensajes entrantes y salientes.
+* Registro de usuario con interfaz mejorada.
+* Simulación de interfaz tipo WhatsApp.
+* Diseño responsivo para pantallas móviles.
+
+### Capturas:
+
+**Interfaz del chat mejorada:**
+![Interfaz Visual](https://i.imgur.com/gM7g8hF.png)
+
+**Registro de usuario:**
+![Interfaz Registro](https://i.imgur.com/gn1VrET.png)
+
+**Diseño responsivo:**
+![Responsividad](https://i.imgur.com/eIRwenG.png)
+
+---
+
+## Actividad 3: Características Adicionales (Opcional)
+
+Se implementaron funcionalidades adicionales para enriquecer la experiencia del usuario:
+
+### Notificaciones en el navegador
+
+Se incluyó el uso de notificaciones del navegador para alertar al usuario cuando llega un nuevo mensaje. Si el navegador soporta esta funcionalidad y el usuario otorga permiso, se mostrará una notificación con el nombre del remitente y el contenido del mensaje.
+
+```javascript
 socket.on("message", ({ user, message }) => {
-  const messageElement = document.createElement('div');
-  messageElement.classList.add('message');
+  // Creación del mensaje visual en el chat
 
-  if (isUser1) {
-    messageElement.classList.add('animate__animated', 'animate__fadeInLeft');
-  } else {
-    messageElement.classList.add('animate__animated', 'animate__fadeInRight');
-  }
-
-  messageElement.innerHTML = `
-    <div class="image-container">
-      <img src="/img/perfil.jpg" alt="${user}'s Avatar">
-    </div>
-    <div class="message-body ${isUser1 ? 'user1-message' : 'user2-message'}">
-      <div class="user-info">
-        <span class="username">${user}</span>
-        <span class="time">Hace 1 minuto</span>
-      </div>
-      <p>${emoji.replace_unified(message)}</p>
-    </div>
-  `;
-
-  allMessages.appendChild(messageElement);
-  allMessages.scrollTop = allMessages.scrollHeight;
-
-  isUser1 = !isUser1; // Alternar la bandera de usuario 1
-
-  // Mostrar notificación
+  // Mostrar notificación si está permitido
   if (Notification.permission === 'granted') {
     new Notification(`Nuevo mensaje de ${user}`, {
       body: message,
@@ -105,12 +101,30 @@ socket.on("message", ({ user, message }) => {
     });
   }
 });
+```
 
+![Notificaciones de mensajes](https://i.imgur.com/Gqy2jVx.png)
 
-![Notificaciones de mensajes](https://imgur.com/Gqy2jVx)
+### Ingreso de nombre de usuario
 
-Nombre de Usuario: Permitir que los usuarios ingresen un nombre antes de empezar a chatear.
-Primero los usuarios deberan ingresar un nombre de usuario con el cual ingresaran al chat, como se puede ver en la siguiente imagen
+Antes de acceder al chat, se solicita un nombre de usuario, lo cual permite una identificación personalizada dentro de la conversación.
 
-![Ingresar Usuario](https://imgur.com/ST1EaIM)
+![Ingresar Usuario](https://i.imgur.com/ST1EaIM.png)
 
+---
+
+## Conclusiones
+
+Durante el desarrollo de este proyecto se obtuvo un aprendizaje significativo sobre la creación de aplicaciones en tiempo real mediante sockets. Comprender su funcionamiento y aplicación en una arquitectura web permitió establecer una comunicación eficiente entre los usuarios.
+
+Además, se profundizó en el diseño de interfaces amigables, responsivas e intuitivas, inspiradas en plataformas populares de mensajería. También se exploraron funcionalidades adicionales como notificaciones push, las cuales enriquecen la experiencia del usuario.
+
+Uno de los mayores retos fue lograr un diseño atractivo y funcional. Sin embargo, la integración de herramientas modernas permitió superar estos desafíos y obtener un resultado satisfactorio.
+
+---
+
+## Referencias
+
+* Zagniotov, A. (n.d.). stubby4j. [https://stubby4j.com/docs/websockets\_configuration\_howto.html](https://stubby4j.com/docs/websockets_configuration_howto.html)
+* Socket.IO. (n.d.). [https://socket.io/](https://socket.io/)
+* Onix React. (2024, noviembre 18). What are Sockets? And what are Sockets for? - Medium. [https://medium.com/@onix\_react/what-are-sockets-and-what-are-sockets-for-8eef56436b7b](https://medium.com/@onix_react/what-are-sockets-and-what-are-sockets-for-8eef56436b7b)
