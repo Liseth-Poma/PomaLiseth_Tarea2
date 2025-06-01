@@ -96,9 +96,10 @@ Socket.IO es una biblioteca para comunicación bidireccional y basada en eventos
    ```
 
 3. Se probó el chat abriendo varias pestañas y dispositivos para validar que la sincronización funcionara correctamente.
+4. 
    ![Prueba del chat con múltiples usuarios](https://imgur.com/8yOQEHU.png)
 
-4. Se agregaron estilos visuales para mejorar la presentación de la lista de usuarios, como un punto verde y el texto "en línea" similar a interfaces como WhatsApp y Messenger.
+5. Se agregaron estilos visuales para mejorar la presentación de la lista de usuarios, como un punto verde y el texto "en línea" similar a interfaces como WhatsApp y Messenger.
    
    ![Lista de usuarios con estilos visuales](https://imgur.com/Nsjrasq.png)
 
